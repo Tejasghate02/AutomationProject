@@ -18,6 +18,7 @@ public static WebDriver driver;
 	
 	public void initialization() throws InterruptedException, IOException
 	{
+		//reading data from property file
 		String browser = ReadData.readPropertyFile("Browser");
 		
 		if(browser.equalsIgnoreCase("Chrome")) {
