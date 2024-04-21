@@ -47,6 +47,12 @@ public class PracticeForm extends TestBase{
 			currentAddress.sendKeys("Ghandhi nagar");
 			HandleDropdownList.handleSelectClass(chooseStateDropdown, "NCR");
 			HandleDropdownList.handleSelectClass(chooseCityDropdown, "Agra");
-			//loginBtn.click();
+			
+		}
+		
+		//created failed test case for screenshot demo
+		public boolean verifyLoginBtn() {
+			boolean btn = loginBtn.isEnabled();
+			return btn;
 		}
 }

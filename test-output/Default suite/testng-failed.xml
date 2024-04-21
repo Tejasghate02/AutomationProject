@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.ModalDialogsTest">
+      <class name="test.PracticeFormTest">
         <methods>
-          <include name="verifySmallModalTest"/>
-          <include name="closeBrowser"/>
-          <include name="verifyLargeModalTest"/>
           <include name="setup"/>
+          <include name="verifyLoginBtnTest"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- test.ModalDialogsTest -->
+      </class> <!-- test.PracticeFormTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

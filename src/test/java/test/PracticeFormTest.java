@@ -32,6 +32,12 @@ public class PracticeFormTest extends TestBase{
 		AssertJUnit.assertTrue(true);  
 	}
 
+	@Test 
+	public void verifyLoginBtnTest() {
+		boolean act = form.verifyLoginBtn();
+		boolean exp = false;
+		AssertJUnit.assertEquals(exp, act);  
+	}
 	
 	@AfterMethod (alwaysRun = true)
 	public void closeBrowser(ITestResult it) throws IOException
