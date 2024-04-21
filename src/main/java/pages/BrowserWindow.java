@@ -74,7 +74,6 @@ public class BrowserWindow extends TestBase{
 	         if(!oW.equalsIgnoreCase(w)) {
 	          
 	            driver.switchTo().window(w);
-	            break;
 	         }
 	      }
 	    

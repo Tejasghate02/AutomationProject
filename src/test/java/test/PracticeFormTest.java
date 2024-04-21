@@ -1,11 +1,17 @@
 package test;
 
 import org.testng.annotations.Test;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.AssertJUnit;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.testng.AssertJUnit;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -37,14 +43,29 @@ public class PracticeFormTest extends TestBase{
 		boolean act = form.verifyLoginBtn();
 		boolean exp = false;
 		AssertJUnit.assertEquals(exp, act);  
+		Reporter.log("Login button is not clickable");
+		
 	}
 	
 	@AfterMethod (alwaysRun = true)
 	public void closeBrowser(ITestResult it) throws IOException
 	{
+		Reporter.setCurrentTestResult(it);
+		File img = new File(System.getProperty("user.dir")+"/failedScreenshot"+it.getMethod().getMethodName()+".jpeg");
+		
 		if(it.FAILURE==it.getStatus()) {
-			Screenshot.screenshot(it.getName());
+			Reporter.log("This is failure log");
+			
+			FileOutputStream screshotStream = new FileOutputStream(img);
+			screshotStream.write(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES));
+			screshotStream.close();
+			
+			//Screenshot.screenshot(it.getName());
+			
+			Reporter.log(" <a href='"+img.getAbsolutePath()+"'> <img src='"+ img.getAbsolutePath()+"' height='200' widht='200/> </a>");
+			
 		}
+		
 		driver.quit();
 	}
 }

@@ -16,7 +16,7 @@ public class Screenshot extends TestBase{
 
 	
 	public static String getDate() {
-		return new SimpleDateFormat("dd-MM-YYY ss-mm-HH").format(new Date());
+		return new SimpleDateFormat("dd-MM-YYY:ss-mm-HH").format(new Date());
 	}
 	
 	public static void screenshot(String nameOfMethod) throws IOException {
