@@ -50,7 +50,6 @@ public class PracticeForm extends TestBase{
 			
 		}
 		
-		//created failed test case for screenshot demo
 		public boolean verifyLoginBtn() {
 			boolean btn = loginBtn.isEnabled();
 			return btn;

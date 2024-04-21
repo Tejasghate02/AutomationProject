@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import base.TestBase;
 
-public class FramesPage extends TestBase{
+public class FramesPage extends TestBase {
 
 	
 	@FindBy(xpath="//button[normalize-space()='Alerts, Frames & Windows']") private WebElement alertFramesWindowsPage;

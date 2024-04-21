@@ -35,6 +35,13 @@ public class AlertPageTest extends TestBase{
 	}
 	
 	@Test
+	public void failedHelloWorldAlertTest() {
+		String expText = "Helloworld!";
+		String actText = al.failedHelloWorldAlert();
+		AssertJUnit.assertEquals(expText, actText);
+	}
+	
+	@Test
 	public void verifyDelayedAlertTest() throws InterruptedException {
 		String expText = "Hello just appeared";
 		String actText = al.verifyDelayedAlert();

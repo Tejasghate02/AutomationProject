@@ -35,6 +35,17 @@ public class AlertPage extends TestBase{
 		return text;
 	}
 	
+	//failed alert test for demo
+	public String failedHelloWorldAlert() {
+		alertPageSelect.click();
+		alertPage.click();
+		helloWorldAlert.click();
+	    Alert alrt = driver.switchTo().alert();
+		String text = alrt.getText();
+		alrt.accept();
+		return text;
+	}
+	
 	public String verifyDelayedAlert() throws InterruptedException {
 		alertPageSelect.click();
 		alertPage.click();

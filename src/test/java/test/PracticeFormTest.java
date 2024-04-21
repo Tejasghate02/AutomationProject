@@ -41,7 +41,7 @@ public class PracticeFormTest extends TestBase{
 	@Test 
 	public void verifyLoginBtnTest() {
 		boolean act = form.verifyLoginBtn();
-		boolean exp = false;
+		boolean exp = true;
 		AssertJUnit.assertEquals(exp, act);  
 		Reporter.log("Login button is not clickable");
 		
@@ -50,20 +50,9 @@ public class PracticeFormTest extends TestBase{
 	@AfterMethod (alwaysRun = true)
 	public void closeBrowser(ITestResult it) throws IOException
 	{
-		Reporter.setCurrentTestResult(it);
-		File img = new File(System.getProperty("user.dir")+"/failedScreenshot"+it.getMethod().getMethodName()+".jpeg");
 		
 		if(it.FAILURE==it.getStatus()) {
-			Reporter.log("This is failure log");
-			
-			FileOutputStream screshotStream = new FileOutputStream(img);
-			screshotStream.write(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES));
-			screshotStream.close();
-			
-			//Screenshot.screenshot(it.getName());
-			
-			Reporter.log(" <a href='"+img.getAbsolutePath()+"'> <img src='"+ img.getAbsolutePath()+"' height='200' widht='200/> </a>");
-			
+			Screenshot.screenshot(it.getName());
 		}
 		
 		driver.quit();
